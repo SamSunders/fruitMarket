@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Fruit Market Madness!</title>
+		<meta name="description" content="Webpage">
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+		<link href="stylesheet.css" type="text/css" rel="stylesheet">
+		<script src="jquery.min.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+	<main class="container">
+		<form id="Submit Your Monthly Fruit Order">
+			<fieldset>
+				<legend>Your Contact Information</legend>
+				<label>First Name:
+					<input type = "text"  name="firstName" placeholder="First Name">
+				</label>
+				<label>Last Name:
+					<input type = "text" name="lastName"  placeholder="Last Name">
+				</label>
+				<label>Email:
+					<input type = "text" name="email"  placeholder="Email Address">
+				</label>
+				<label>Phone Number:
+					<input type = "text" name="email" placeholder="Phone Number">
+				</fieldset>
+			<fieldset>
+				<legend>Select Fruit Items For Your Order</legend>
+			</fieldset>
+		</form>	
+		<div id="Prices and Totals">
+			<div id = "appleSection" class="col-md-3">
+				<img src="apple.png" /></br>
+				<p class = "applePriceC">Current Price: </p>
+				<input type="button" value="Order Apples" name="submitButtonApple">
+				<p class="appleQuantity">Apple Quantity: 0</p>
+			</div>
+
+			<div id = "orangeSection" class="col-md-3">
+				<img src="orange.png" /></br>
+				<p class = "orangePriceC">Current Price: </p>
+				<input type="button" value="Order Oranges" name="submitButtonOranges">
+				<p class="orangesQuantity">Oranges Quantity: 0</p>
+			</div>
+
+			<div id = "pearSection" class="col-md-3">
+				<img src="pear.png" /></br>
+				<p class = "pearPriceC">Current Price: </p>
+				<input type="button" value="Order Pears" name="submitButtonPear">
+
+				<p class="pearQuantity">Pear Quantity: 0</p>
+			</div>
+
+			<div id = "bananaSection" class="col-md-3">
+				<img src="bananas.png" /></br>
+				<p class = "bananaPriceC">Current Price: </p>
+				<input type="button" value="Order Bananas" name="submitButtonBanana">
+				<p class="bananaQuantity">Banana Quantity: 0</p>
+			</div>
+
+			<!-- <p class="orangeQuantity">Orange Quantity: 0</p>
+			<p class="pearQuantity"> Pear Quantity: 0</p>
+			<p class="bananaQuantity">Banana Quantity: 0</p> -->
+		</div>
+	</label>	
+	<div id = "custStuff"></div>	
+	</body>
+</html>

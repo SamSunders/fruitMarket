@@ -17,10 +17,12 @@ console.log(price);
 // var pears = new Fruit ("pears", randomNumber(0.5,9.99), 0);
 // var oranges = new Fruit ("oranges", randomNumber(0.5,9.99), 0);
 // var kiwi = {price: 8, quantity: 0};
-var apples = {price: randomNumber(0.5, 9.99), quantity: 0};
-var bananas = {price: randomNumber(0.5, 9.99), quantity: 0};
-var oranges = {price: randomNumber(0.5, 9.99), quantity: 0};
-var pears = {price: randomNumber(0.5, 9.99), quantity: 0};
+var apples = {price: randomNumber(0.5, 9.99), quantity: 0, spent: 0};
+var bananas = {price: randomNumber(0.5, 9.99), quantity: 0, spent: 0};
+var oranges = {price: randomNumber(0.5, 9.99), quantity: 0, spent: 0};
+var pears = {price: randomNumber(0.5, 9.99), quantity: 0, spent: 0};
+
+var average;
 
 
 $(document).ready(function(){
@@ -30,21 +32,33 @@ $(document).ready(function(){
 $("[name='submitButtonApple']").on('click', function() {
 			apples.quantity++;
 			$(".appleQuantity").html("Apple Quantity: " + apples.quantity);
+			apples.spent = apples.spent + apples.price;
+			calculateAveragePrice(apples);
+			$(".avApplePrice").html("Average Price: " + average);
 			});
 
 $("[name='submitButtonOranges']").on('click', function() {
 			oranges.quantity++;
 			$(".orangesQuantity").html("Orange Quantity: " + oranges.quantity);
+			oranges.spent = oranges.spent + oranges.price;
+			calculateAveragePrice(oranges);
+			$(".avOrangePrice").html("Average Price: " + average);
 			});
 
 $("[name='submitButtonPear']").on('click', function() {
 			pears.quantity++;
 			$(".pearQuantity").html("Pear Quantity: " + pears.quantity);
+			pears.spent = pears.spent + pears.price;
+			calculateAveragePrice(pears);
+			$(".avPearPrice").html("Average Price: " + average);
 			});
 
 $("[name='submitButtonBanana']").on('click', function() {
 			bananas.quantity++;
 			$(".bananaQuantity").html("Banana Quantity: " + bananas.quantity);
+			bananas.spent = bananas.spent + bananas.price;
+			calculateAveragePrice(bananas);
+			$(".avBananaPrice").html("Average Price: " + average);
 			});
 
 var totalCash = 100;
@@ -88,6 +102,8 @@ function writePrice() {
 	$(".pearPriceC").html("Current Price: " + pears.price);
 	$(".bananaPriceC").html("Current Price: " + bananas.price);
 
+
+
 }
 priceGenerator(apples);
 console.log("this is apples.price" , apples.price);
@@ -119,6 +135,19 @@ function priceGenerator (fruit) {
 	//console.log(price);
 
 };
+
+function calculateAveragePrice(fruit){
+	average = fruit.spent / fruit.quantity;
+	average = average.toFixed(2);
+	return average;
+
+
+	
+	// $(".avOrangePrice").html("Average Price: " + oranges.price);
+	// $(".avPearPrice").html("Average Price: " + pears.price);
+	// $(".avBananaPrice").html("Average Price: " + bananas.price);
+}
+
 });
 
 //console.log("TEST NUM 5: " , testNum);
